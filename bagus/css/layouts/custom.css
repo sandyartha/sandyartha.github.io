@@ -1,0 +1,130 @@
+
+
+div.background {
+        background: url(img/header.jpg) no-repeat;
+        width:100%;
+        margin:0;
+        padding:0;
+        height:300px;
+        background-size:cover;
+        background-position:0 20%;
+    }
+
+
+body {
+    color: #777;
+    background:#f3f4f6;
+}
+
+.pure-img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    padding-left: 0;
+    background: rgba(0,0,0,0);
+}
+#layout {
+    margin: -250px auto 0;
+    width: 100%;
+    max-width: 960px;
+    z-index: 2;
+}
+    #layout.active #menu {
+        /* left: 150px; */
+        width: 150px;
+    }
+
+    #layout.active .menu-link {
+        left: 150px;
+    }
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+    margin: 0 auto;
+    padding: 0 2em;
+    max-width: 950px;
+    background:white;
+    margin-bottom: 50px;
+    line-height: 1.6em;
+    padding: 30px 40px;
+    box-shadow: 0 2px 3px rgba(0,0,0,.4);
+}
+
+.header {
+     margin: 0;
+     color: #fff;
+     text-align: center;
+     padding: 2.5em 2em 0;
+     background:rgba(0,0,0,0);
+     margin-bottom: 1px;
+ }
+    .header h1 {
+        margin: 0.2em 0;
+        font-size: 3em;
+        font-weight: 300;
+    }
+     .header h2 {
+        font-weight: 300;
+        color: #ccc;
+        padding: 0;
+        margin-top: 0;
+    }
+
+.content-subhead {
+    margin: 50px 0 20px 0;
+    font-weight: 300;
+    color: #888;
+}
+
+
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 48em) {
+
+    .header,
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    #layout {
+        /* padding-left: 150px;  left col width "#menu" */
+        left: 0;
+    }
+    #layout.active {
+        left: 150px;
+    }
+}
+
+@media (max-width: 48em) {
+    /* Only apply this when the window is small. Otherwise, the following
+    case results in extra padding on the left:
+        * Make the window small.
+        * Tap the menu to trigger the active state.
+        * Make the window large again.
+    */
+    #layout.active {
+        position: relative;
+        left: 150px;
+    }
+}
+
